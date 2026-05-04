@@ -1,0 +1,479 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260504130929_sjkj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260504130929_sjkj.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260504124521_fjdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260504124521_fjdk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\models\\comments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:models\\comments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\views\\posts\\post.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:views\\posts\\post.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\data\\blogdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:data\\blogdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\models\\posts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:models\\posts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\migrations\\20260503170654_updatedatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:migrations\\20260503170654_updatedatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\migrations\\20260503123817_posttt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:migrations\\20260503123817_posttt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\migrations\\20260503123512_postt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:migrations\\20260503123512_postt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\migrations\\20260502152849_fixfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:migrations\\20260502152849_fixfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260502151517_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260502151517_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260502150829_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20260502150829_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\migrations\\20260503080758_addtitletoposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:migrations\\20260503080758_addtitletoposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\migrations\\20260503162827_updatemodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:migrations\\20260503162827_updatemodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|c:\\users\\master\\desktop\\plogmanagementsystem\\migrations\\20260504091700_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F881E30F-8A38-B724-62F8-F3405553C3AC}|BlogManagementSystem.csproj|solutionrelative:migrations\\20260504091700_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T09:47:17.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CommentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Controllers\\CommentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommentsController.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Controllers\\CommentsController.cs",
+              "RelativeToolTip": "Controllers\\CommentsController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T09:19:53.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T10:30:38.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAEIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T09:41:29.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeVM.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\ViewModels\\HomeVM.cs",
+              "RelativeDocumentMoniker": "ViewModels\\HomeVM.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\ViewModels\\HomeVM.cs",
+              "RelativeToolTip": "ViewModels\\HomeVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T09:38:40.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T10:23:55.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "Models\\Users.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Models\\Users.cs",
+              "RelativeToolTip": "Models\\Users.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T20:08:23.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20260504130929_sjkj.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260504130929_sjkj.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260504130929_sjkj.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260504130929_sjkj.cs",
+              "RelativeToolTip": "Migrations\\20260504130929_sjkj.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T13:09:30.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T10:59:25.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Comments.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Models\\Comments.cs",
+              "RelativeDocumentMoniker": "Models\\Comments.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Models\\Comments.cs",
+              "RelativeToolTip": "Models\\Comments.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T20:06:30.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20260504124521_fjdk.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260504124521_fjdk.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260504124521_fjdk.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260504124521_fjdk.cs",
+              "RelativeToolTip": "Migrations\\20260504124521_fjdk.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T12:45:21.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T10:26:51.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "post.cshtml",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\posts\\post.cshtml",
+              "RelativeDocumentMoniker": "Views\\posts\\post.cshtml",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\posts\\post.cshtml",
+              "RelativeToolTip": "Views\\posts\\post.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T14:54:30.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20260504091700_update.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260504091700_update.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260504091700_update.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260504091700_update.cs",
+              "RelativeToolTip": "Migrations\\20260504091700_update.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T09:17:01.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PostsController.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Controllers\\PostsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PostsController.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Controllers\\PostsController.cs",
+              "RelativeToolTip": "Controllers\\PostsController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T14:53:58.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BlogDbcontext.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Data\\BlogDbcontext.cs",
+              "RelativeDocumentMoniker": "Data\\BlogDbcontext.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Data\\BlogDbcontext.cs",
+              "RelativeToolTip": "Data\\BlogDbcontext.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T19:57:18.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Posts.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Models\\Posts.cs",
+              "RelativeDocumentMoniker": "Models\\Posts.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Models\\Posts.cs",
+              "RelativeToolTip": "Models\\Posts.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwA0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T19:42:09.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20260503170654_updateDatabase.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503170654_updateDatabase.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260503170654_updateDatabase.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503170654_updateDatabase.cs",
+              "RelativeToolTip": "Migrations\\20260503170654_updateDatabase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T17:06:55.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-02T13:56:09.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20260503162827_UpdateModels.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503162827_UpdateModels.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260503162827_UpdateModels.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503162827_UpdateModels.cs",
+              "RelativeToolTip": "Migrations\\20260503162827_UpdateModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T16:28:28.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T19:38:30.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20260503123817_posttt.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503123817_posttt.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260503123817_posttt.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503123817_posttt.cs",
+              "RelativeToolTip": "Migrations\\20260503123817_posttt.cs",
+              "ViewState": "AgIAAEAAAAAAzczMzMwuwAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T12:38:17.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-01T19:32:42.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20260503123512_postt.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503123512_postt.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260503123512_postt.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503123512_postt.cs",
+              "RelativeToolTip": "Migrations\\20260503123512_postt.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T12:35:14.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20260503080758_addTitleTOPosts.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503080758_addTitleTOPosts.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260503080758_addTitleTOPosts.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260503080758_addTitleTOPosts.cs",
+              "RelativeToolTip": "Migrations\\20260503080758_addTitleTOPosts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T08:07:58.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20260502150829_initialcreate.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260502150829_initialcreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260502150829_initialcreate.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260502150829_initialcreate.cs",
+              "RelativeToolTip": "Migrations\\20260502150829_initialcreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T15:08:29.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "20260502152849_FixFinal.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260502152849_FixFinal.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260502152849_FixFinal.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260502152849_FixFinal.cs",
+              "RelativeToolTip": "Migrations\\20260502152849_FixFinal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T15:28:49.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "20260502151517_initialcreate.cs",
+              "DocumentMoniker": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260502151517_initialcreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260502151517_initialcreate.cs",
+              "ToolTip": "C:\\Users\\Master\\Desktop\\plogManagementSystem\\Migrations\\20260502151517_initialcreate.cs",
+              "RelativeToolTip": "Migrations\\20260502151517_initialcreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T15:15:17.898Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

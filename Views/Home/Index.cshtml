@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model BlogManagementSystem.ViewModels.HomeVM
+<h2>Posts</h2>
+@foreach(var post in Model.posts)
+{
+    <div>
+        <h3>@post.Title</h3>
+        <p>@post.postContent</p>
+        <small>@post.createAt</small>
+        <hr />
+    </div>
+    @if (post.comments != null)
+    {
+        @foreach(var comment in post.comments)
+        {
+            <p>@comment.commentContent</p>
+        }
+    }
+    <form method="post" asp-controller="Comments" asp-action="Index">
+        <input type="hidden" name="PostId" value="@post.postsId" />
+        <input type="text" name="contentComment" placeholder="write a comment" />
+        @if (TempData["error"] != null)
+            {
+                <p class="text-danger">@TempData["error"]</p>
+            }
+            <button type="submit">Add Comment</button>
+    </form>
+}
+
+

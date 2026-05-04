@@ -1,0 +1,23 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BlogManagementSystem.Models
+{
+    public class Users
+    {
+        [Key]
+        public  int userId { get; set; }
+        [Required(ErrorMessage ="must enter your name")]
+        public string UserName { get; set; }
+        [Required(ErrorMessage = "must enter your email")]
+
+        public string UserEmail { get; set; }
+        [Required][RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{7,}$", ErrorMessage = "password must be at least 7 chracters and contain uppercas,lowercase,number and special character")]
+
+        public string UserPassword { get; set; }
+        public DateTime registerTime { get; set; }
+        public string ?salt { get; set; }
+        public virtual List<Posts> ?posts { get; set; } = new();
+        public virtual List<Comments>? comments { get; set; } = new();
+        
+    }
+}
