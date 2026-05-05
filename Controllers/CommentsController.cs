@@ -1,6 +1,7 @@
 ﻿using BlogManagementSystem.Data;
 using BlogManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BlogManagementSystem.Controllers
 {
@@ -12,7 +13,7 @@ namespace BlogManagementSystem.Controllers
             _context = context;
         }
         [HttpGet]
-        public IActionResult index()
+        public IActionResult Index()
         {
             return View();
         }
@@ -20,17 +21,59 @@ namespace BlogManagementSystem.Controllers
         public IActionResult Index(Comments comment)
         {
             comment.commentTime = DateTime.Now;
-           
+
             var currentComment = comment.commentContent;
-            if (currentComment == null)
+            
+            if (string.IsNullOrWhiteSpace(currentComment))
             {
-                TempData["error"] = "comment cannot be empty";
+                TempData["Error"] = "comment cannot be empty";
 
                 return RedirectToAction("Index", "Home");
             }
-            _context.comments.Add(comment);
+            var userIdCurrent = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userIdCurrent))
+            {
+                TempData["Error"] = "must be register first";
+                return RedirectToAction("Index", "Home");
+            }
+            comment.usersId = int.Parse(userIdCurrent);
+                    _context.comments.Add(comment);
+                    _context.SaveChanges();
+                    return RedirectToAction("Index", "Home");
+                
+            
+        }
+        [HttpGet]
+        public IActionResult EditComment( int commentId)
+        {
+            var CurrentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(CurrentUserId))
+            {
+                TempData["Error"] = "must be login or register first";
+                return RedirectToAction("Index", "Home");
+            }
+            var comment = _context.comments.Find(commentId);
+            var ownerId = comment.usersId;
+            if (ownerId.ToString() != CurrentUserId.ToString())
+            {
+                TempData["Error"] = "you cannot edit this comment";
+                return RedirectToAction("Index", "Home");
+            }
+            return View(comment);
+        }
+        [HttpPost]
+        public IActionResult EditComment(Comments commentUpdate)
+        {
+            var UpdateComment = _context.comments.Find(commentUpdate.commentId);
+            if (commentUpdate.commentContent == null) {
+                TempData["Error"] = "Comment cannot be empty";
+                return View(commentUpdate);
+
+            }
+        
+            UpdateComment.commentContent = commentUpdate.commentContent;
             _context.SaveChanges();
-           return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

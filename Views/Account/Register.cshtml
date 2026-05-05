@@ -1,4 +1,10 @@
-﻿@model BlogManagementSystem.Models.Users
+﻿@if (TempData["Error"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Error"];
+    </div>
+}
+@model BlogManagementSystem.Models.Users
 
 <div class="container mt-5">
     <div class="row justify-content-center">

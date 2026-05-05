@@ -1,0 +1,7 @@
+﻿@model Comments
+<h2>Edit comment</h2>
+<form method="post">
+    <input type="hidden" asp-for="commentId"/>
+    <textarea asp-for="commentContent"></textarea>
+    <button type="submit">Save Changes</button>
+</form>

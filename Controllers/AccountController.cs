@@ -1,25 +1,37 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BlogManagementSystem.Data;
+﻿using BlogManagementSystem.Data;
 using BlogManagementSystem.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using System.Runtime.CompilerServices;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using Microsoft.AspNetCore.Identity;
 
 namespace BlogManagementSystem.Controllers
 {
     public class AccountController : Controller
-    {
+    {  
         private readonly BlogDbcontext _context;
         public AccountController(BlogDbcontext context)
         {
             _context = context;
         }
+        
+
+     
+
+
+
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
+       
         private string GenerateSalt()
         {
             byte[] saltByte = new byte[16];
@@ -71,13 +83,16 @@ namespace BlogManagementSystem.Controllers
             return RedirectToAction("Login");
 
         }
+         
+
+
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Login(Users user)
+        public async Task< IActionResult> Login(Users user)
         { 
 
             var dbuser = _context.users.FirstOrDefault(u => u.UserEmail == user.UserEmail);
@@ -92,6 +107,17 @@ namespace BlogManagementSystem.Controllers
                 ModelState.AddModelError("UserPassword", "wrong password");
                 return View(user);
             }
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier,dbuser.userId.ToString()),
+                new Claim(ClaimTypes.Name,dbuser.UserName)
+
+
+            };
+            var claimIdentifier = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            var authuProperties = new AuthenticationProperties();
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimIdentifier), authuProperties);
             return RedirectToAction("Index", "Home");
 
         }

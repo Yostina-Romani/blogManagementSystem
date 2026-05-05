@@ -1,6 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@if (TempData["Error"]!=null)
+{
+    <p class="text-danger">@TempData["Error"]</p>
+
+}
 
 @model BlogManagementSystem.ViewModels.HomeVM
 <h2>Posts</h2>
@@ -17,17 +22,19 @@
         @foreach(var comment in post.comments)
         {
             <p>@comment.commentContent</p>
+            <a asp-controller="Comments" asp-action="EditComment"  asp-route-commentId="@comment.commentId">Edit Comment</a>
         }
     }
     <form method="post" asp-controller="Comments" asp-action="Index">
-        <input type="hidden" name="PostId" value="@post.postsId" />
-        <input type="text" name="contentComment" placeholder="write a comment" />
-        @if (TempData["error"] != null)
+        <input type="hidden" name="postsId" value="@post.postsId" />
+        <input type="text" name="commentContent" placeholder="write a comment" />
+        @if (TempData["Error"] != null)
             {
-                <p class="text-danger">@TempData["error"]</p>
+                <p class="text-danger">@TempData["Error"]</p>
             }
             <button type="submit">Add Comment</button>
     </form>
-}
+    <a asp-controller="Posts" asp-action="Edit" asp-route-postsId="@post.postsId">Edit Post</a>
 
+}
 

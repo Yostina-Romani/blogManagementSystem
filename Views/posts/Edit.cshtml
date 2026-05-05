@@ -1,0 +1,11 @@
+﻿@model Posts
+<h2>Edit Post</h2>
+<form method="post">
+    <input type="hidden" asp-for="postsId" />
+    <input  asp-for="Title" />
+    <br /><br />
+    <textarea asp-for="postContent"></textarea>
+    <br /><br />
+    <button type="submit">Save</button>
+</form>
+
