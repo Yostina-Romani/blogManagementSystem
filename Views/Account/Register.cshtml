@@ -1,48 +1,116 @@
-﻿@if (TempData["Error"] != null)
+﻿@if (TempData["ErrorRegister"] != null)
 {
-    <div class="alert alert-success">
-        @TempData["Error"];
+    <div class="container mt-4">
+        <div class="alert alert-success text-center shadow-sm rounded-3">
+            @TempData["ErrorRegister"]
+        </div>
     </div>
 }
+
 @model BlogManagementSystem.Models.Users
+
+<style>
+    body {
+        background: linear-gradient(135deg, #eef2f7, #dbeafe);
+        min-height: 100vh;
+    }
+
+    .card {
+        border: none;
+    }
+
+    .card-body {
+        padding: 35px;
+    }
+
+    h3 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 10px;
+        transition: 0.3s;
+    }
+
+        .form-control:focus {
+            box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+            border-color: #0d6efd;
+        }
+
+    .btn-primary {
+        padding: 10px;
+        font-weight: bold;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+        .btn-primary:hover {
+            transform: scale(1.03);
+        }
+
+    .login-link {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+        .login-link a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #0d6efd;
+        }
+
+            .login-link a:hover {
+                text-decoration: underline;
+            }
+</style>
 
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
 
             <div class="card shadow-lg rounded-4">
-                <div class="card-body p-4">
+                <div class="card-body">
 
                     <h3 class="text-center mb-4">Create Account</h3>
 
                     <form asp-controller="Account" asp-action="Register" method="post">
-                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
                         <!-- Username -->
                         <div class="mb-3">
                             <label asp-for="UserName" class="form-label"></label>
-                            <input asp-for="UserName" class="form-control rounded-3" placeholder="Enter your name" />
+                            <input asp-for="UserName" class="form-control" placeholder="Enter your name" />
                             <span asp-validation-for="UserName" class="text-danger"></span>
                         </div>
 
                         <!-- Email -->
                         <div class="mb-3">
                             <label asp-for="UserEmail" class="form-label"></label>
-                            <input asp-for="UserEmail" class="form-control rounded-3" placeholder="Enter your email" />
+                            <input asp-for="UserEmail" class="form-control" placeholder="Enter your email" />
                             <span asp-validation-for="UserEmail" class="text-danger"></span>
                         </div>
 
                         <!-- Password -->
                         <div class="mb-3">
                             <label asp-for="UserPassword" class="form-label"></label>
-                            <input asp-for="UserPassword" type="password" class="form-control rounded-3" placeholder="Enter your password" />
+                            <input asp-for="UserPassword" type="password" class="form-control" placeholder="Enter your password" />
+                            <input asp-for="UserPassword_confirm" type="password" class="form-control" placeholder="confirm your password" />
                             <span asp-validation-for="UserPassword" class="text-danger"></span>
                         </div>
 
+                        <!-- Login link -->
+                        <div class="login-link">
+                            <a asp-controller="Account" asp-action="Login">
+                                Already have an account? Login
+                            </a>
+                        </div>
+
                         <!-- Button -->
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary rounded-3">
-                                Create Account
+                        <div class="d-grid mt-3">
+                            <button type="submit" class="btn btn-primary">
+                                Create Account 🚀
                             </button>
                         </div>
 

@@ -74,10 +74,20 @@ namespace BlogManagementSystem.Controllers
                 ModelState.AddModelError("UserName", "name used");
                 return View(user);
             }
+         var   confirm_pass = user.UserPassword_confirm;
+            var pass = user.UserPassword;
+            if (pass != confirm_pass)
+            {
+                TempData["ErrorRegister"] = "The password and confirmation must match.";
+                return View(user);
+
+            }
+           // if()
             string salt = GenerateSalt();
             user.salt = salt;
             user.registerTime= DateTime.Now;
-            user.UserPassword = CreateHash(user.UserPassword, salt);
+            
+            user.UserPassword = CreateHash(pass, salt);
             _context.users.Add(user);
             _context.SaveChanges();
             return RedirectToAction("Login");
@@ -121,5 +131,16 @@ namespace BlogManagementSystem.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+
+        //lougout
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+           return RedirectToAction("Index", "Home");
+        }
+
+
+
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BlogManagementSystem.Data;
 using BlogManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Security.Claims;
 
 namespace BlogManagementSystem.Controllers
@@ -66,7 +67,7 @@ namespace BlogManagementSystem.Controllers
         {
             var UpdateComment = _context.comments.Find(commentUpdate.commentId);
             if (commentUpdate.commentContent == null) {
-                TempData["Error"] = "Comment cannot be empty";
+                TempData["error"] = "Comment cannot be empty";
                 return View(commentUpdate);
 
             }
@@ -74,6 +75,44 @@ namespace BlogManagementSystem.Controllers
             UpdateComment.commentContent = commentUpdate.commentContent;
             _context.SaveChanges();
             return RedirectToAction("Index", "Home");
+        }
+        [HttpGet]
+        public IActionResult Delete_comment(int commentId)
+        {
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value.ToString();
+            var comment = _context.comments.Find(commentId);
+
+
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                TempData["Error"] = "you must login or register first";
+                return RedirectToAction("Index", "Home");
+            }
+
+            var OwnerId = comment.usersId.ToString();
+
+                if (OwnerId != currentUserId)
+                {
+                    TempData["Error"] = "you cannot delete this comment";
+                    return RedirectToAction("Index", "Home");
+
+                
+            }
+
+                return View(comment);
+            
+
+        }
+        [HttpPost]
+        public IActionResult Delete_comment(Comments comment)
+        {
+            var comment_delete = _context.comments.Find(comment.commentId);
+            _context.comments.Remove(comment_delete);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Home");
+
+
         }
     }
 }

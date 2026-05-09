@@ -1,4 +1,9 @@
-﻿@model Comments
+﻿@if (TempData["error"]!=null)
+{
+    <p class="text-danger">@TempData["error"]</p>
+    
+}
+@model Comments
 <h2>Edit comment</h2>
 <form method="post">
     <input type="hidden" asp-for="commentId"/>

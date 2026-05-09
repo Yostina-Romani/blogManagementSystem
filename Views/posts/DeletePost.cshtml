@@ -1,0 +1,9 @@
+﻿@model Posts
+   
+
+<form asp-action="DeletePost" asp-controller="Posts" method="post">
+    <input type="hidden" asp-for="postsId" />
+    <p>do you sure to delete this post</p>
+    <button type="submit">confirm delete</button>
+    <a asp-action="Index" asp-controller="Home">cancel</a>
+</form>

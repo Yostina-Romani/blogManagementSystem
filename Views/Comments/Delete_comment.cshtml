@@ -1,0 +1,8 @@
+﻿@model Comments
+<form method="post" asp-action="Delete_comment" asp-controller="Comments">
+    <input type="hidden" asp-for="@Model.commentId"/>
+    <p>do you sure to delete this comment</p>
+    <button type="submit">yes delete</button>
+    <a asp-action="Index" asp-controller="Home">  cancel</a>
+
+</form>

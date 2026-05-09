@@ -6,6 +6,7 @@ using BlogManagementSystem.Data;
 using BlogManagementSystem.ViewModels;
 
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace BlogManagementSystem.Controllers
 {
@@ -20,12 +21,26 @@ namespace BlogManagementSystem.Controllers
             _logger = logger;
             _context = context;
         }
-
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(string search)
         {
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+           
+            var posts = _context.posts.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(search))
+                {
+                if (currentUserId == null)
+                {
+                    TempData["ErrorRegister"] = "must be register or login first";
+                    return RedirectToAction("Register", "Account");
+                }
+
+                posts = posts.Where(p => p.Title.Contains(search) || p.postContent.Contains(search));
+                
+            }
             var model = new HomeVM
             {
-                posts = _context.posts.Include(p => p.comments).ToList()
+                posts = posts.Include(p => p.comments).ToList()
             };
             
             return View(model);
