@@ -37,7 +37,13 @@
 
                     <hr />
      <div>
-         @Model.imageUrl;
+                        @if (!string.IsNullOrEmpty(Model.imageUrl))
+                        {
+                            <img src="@Model.imageUrl"
+                                 class="img-fluid rounded mt-3"
+                                 style="max-height:250px;" />
+
+                        }
      </div>
                     <!-- Footer Info -->
                     <div class="text-muted small">

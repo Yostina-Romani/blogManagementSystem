@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Microsoft.AspNetCore.Http;
 
 namespace BlogManagementSystem.Controllers
 {
@@ -23,16 +24,27 @@ namespace BlogManagementSystem.Controllers
         }
       
         [HttpPost]
-       public IActionResult post(Posts post)
+       public IActionResult post(Posts post,IFormFile imageFile)
         {
             // to create post
-            post.createAt = DateTime.Now;
             var userIdCurrent = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userIdCurrent == null)
             {
                 TempData["ErrorRegister"] = "must be register first";
                return RedirectToAction("Register", "Account");
             }
+            if (imageFile != null)
+            {
+                string filename = Guid.NewGuid().ToString()+Path.GetExtension(imageFile.FileName);
+                string fullPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images", filename);
+                using (var stream = new FileStream(fullPath, FileMode.Create)) 
+                {
+                    imageFile.CopyTo(stream);
+                }
+                post.imageUrl = "/Images/" + filename;
+            }
+            post.createAt = DateTime.Now;
+
             post.userId = int.Parse(userIdCurrent);
             _context.posts.Add(post);
             _context.SaveChanges();
@@ -60,7 +72,7 @@ namespace BlogManagementSystem.Controllers
             return View(post);
         }
         [HttpPost]
-        public IActionResult Edit(Posts updatePost)
+        public IActionResult Edit(Posts updatePost ,IFormFile imageFile ,string removeImage)
         {
             var post = _context.posts.Find(updatePost.postsId);
             if (updatePost.Title == null)
@@ -74,7 +86,45 @@ namespace BlogManagementSystem.Controllers
                 TempData["Error"] = "content cannot be empty";
                 return View(updatePost);
             }
+            
             post.postContent = updatePost.postContent;
+            if (imageFile != null)
+            {
+
+                string filename = Guid.NewGuid().ToString()
+                                  + Path.GetExtension(imageFile.FileName);
+
+                string fullPath = Path.Combine(
+            Directory.GetCurrentDirectory(),
+            "wwwroot/Images",
+            filename
+        );
+                using (var stream = new FileStream(fullPath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+
+                post.imageUrl = $"/Images/{filename}";
+            }
+            if(!string.IsNullOrEmpty(removeImage)&& removeImage == "true")
+            {
+                if (!string.IsNullOrEmpty(post.imageUrl))
+                {
+                    string oldPath = Path.Combine(
+                        Directory.GetCurrentDirectory(),
+                        "wwwroot",
+                        post.imageUrl.TrimStart('/')
+                    );
+
+                    if (System.IO.File.Exists(oldPath))
+                    {
+                        System.IO.File.Delete(oldPath);
+                    }
+                }
+
+                post.imageUrl = null;
+            }
+            
             _context.SaveChanges();
             return RedirectToAction("Index", "Home");
 
@@ -134,9 +184,26 @@ namespace BlogManagementSystem.Controllers
                 pdf.Add(new Paragraph("title:" + post.Title));
                 pdf.Add(new Paragraph("content:" + post.postContent));
                 pdf.Add(new Paragraph("time:" + post.createAt));
-                pdf.Add(new Paragraph("image:" + post.imageUrl));
                 pdf.Add(new Paragraph("owner name:" + post.User?.UserName));
                 pdf.Add(new Paragraph("owner email:" + post.User?.UserEmail));
+                if (!string.IsNullOrEmpty(post.imageUrl))
+                {
+                    string imagePath = Path.Combine(
+                        Directory.GetCurrentDirectory(),
+                        "wwwroot",
+                        post.imageUrl.TrimStart('/')
+                    );
+
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagePath);
+
+                        img.ScaleToFit(300f, 300f); 
+                        img.Alignment = Element.ALIGN_CENTER;
+
+                        pdf.Add(img);
+                    }
+                }
 
             }
             pdf.Close();
@@ -158,9 +225,26 @@ namespace BlogManagementSystem.Controllers
             pdf.Add(new Paragraph("title:" + post.Title));
             pdf.Add(new Paragraph("content:" + post.postContent));
             pdf.Add(new Paragraph("time:" + post.createAt));
-            pdf.Add(new Paragraph("image:" + post.imageUrl));
             pdf.Add(new Paragraph("owner name:" + post.User?.UserName));
             pdf.Add(new Paragraph("owner email:" + post.User?.UserEmail));
+            if (!string.IsNullOrEmpty(post.imageUrl))
+            {
+                string imagePath = Path.Combine(
+                    Directory.GetCurrentDirectory(),
+                    "wwwroot",
+                    post.imageUrl.TrimStart('/')
+                );
+
+                if (System.IO.File.Exists(imagePath))
+                {
+                    iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(imagePath);
+
+                    img.ScaleToFit(300f, 300f); 
+                    img.Alignment = Element.ALIGN_CENTER;
+
+                    pdf.Add(img);
+                }
+            }
             pdf.Close();
 
             return File(memory.ToArray(), "application/pdf", "post.pdf");

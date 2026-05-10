@@ -5,58 +5,63 @@
 }
 
 <style>
+
     body {
-        background: #f5f7fb;
+        background: #f4f6fb;
     }
 
     .post-card {
         border: none;
-        border-radius: 16px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         transition: 0.3s;
-    }
-
-    .post-card:hover {
-        transform: translateY(-3px);
-    }
-
-    .btn-custom {
-        border-radius: 20px;
-        padding: 5px 12px;
-        font-size: 13px;
-    }
-
-    .btn-download {
-        background: #ff4d4d;
-        color: white;
-    }
-
-    .btn-edit {
-        background: #ffc107;
-        color: black;
-    }
-
-    .btn-delete {
-        background: #343a40;
-        color: white;
-    }
-
-    .btn-comment {
-        background: #0d6efd;
-        color: white;
-        border-radius: 20px;
-    }
-
-    .read-more {
-        color: #0d6efd;
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    .search-box {
-        border-radius: 25px;
         padding: 10px;
+    }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .post-content {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.7;
+        max-height: 90px;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+        .post-content.expanded {
+            max-height: 1000px;
+        }
+
+    .read-more-btn {
+        border: none;
+        background: none;
+        color: #0d6efd;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 0;
+    }
+
+        .read-more-btn:hover {
+            text-decoration: underline;
+        }
+
+    .post-image {
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+
+    .comment-box {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 8px;
+        margin-bottom: 8px;
     }
 
 </style>
@@ -78,7 +83,7 @@
 
         <input type="text"
                name="search"
-               class="form-control search-box"
+               class="form-control rounded-pill"
                placeholder="Search posts..." />
 
         <button type="submit" class="btn btn-primary rounded-pill px-4">
@@ -86,7 +91,7 @@
         </button>
     </form>
 
-    <!-- Posts -->
+    <!-- POSTS -->
     @foreach (var post in Model.posts)
     {
         <div class="card post-card mb-4">
@@ -105,15 +110,15 @@
 
                 <!-- Content -->
                 <p id="content-@post.postsId"
-                   class="text-muted"
-                   style="max-height: 80px; overflow: hidden;">
+                   class="post-content">
                     @post.postContent
                 </p>
 
-                <span class="read-more"
-                      onclick="toggleContent(@post.postsId)">
+                <button id="btn-@post.postsId"
+                        class="read-more-btn"
+                        onclick="toggleContent(@post.postsId)">
                     Read more
-                </span>
+                </button>
 
                 <!-- Date -->
                 <div class="mt-2">
@@ -126,52 +131,50 @@
                 @if (!string.IsNullOrEmpty(post.imageUrl))
                 {
                     <img src="@post.imageUrl"
-                         class="img-fluid rounded mt-3"
-                         style="max-height:250px;" />
+                         class="post-image" />
                 }
 
                 <!-- Buttons -->
-                <div class="mt-3 d-flex flex-wrap gap-2">
+                <div class="mt-3 d-flex gap-2">
 
                     <a asp-action="ExportOnePost"
                        asp-controller="Posts"
                        asp-route-postId="@post.postsId"
-                       class="btn btn-custom btn-download">
+                       class="btn btn-danger btn-sm">
                         Download
                     </a>
 
-                    <a asp-controller="Posts"
-                       asp-action="Edit"
+                    <a asp-action="Edit"
+                       asp-controller="Posts"
                        asp-route-postsId="@post.postsId"
-                       class="btn btn-custom btn-edit">
+                       class="btn btn-warning btn-sm">
                         Edit
                     </a>
 
-                    <a asp-controller="Posts"
-                       asp-action="DeletePost"
+                    <a asp-action="DeletePost"
+                       asp-controller="Posts"
                        asp-route-postsId="@post.postsId"
-                       class="btn btn-custom btn-delete">
+                       class="btn btn-dark btn-sm">
                         Delete
                     </a>
 
                 </div>
 
-                <!-- Comments Button -->
-                <button class="btn btn-comment mt-3"
+                <!-- COMMENTS -->
+                <button class="btn btn-primary mt-3"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#comments-@post.postsId">
                     💬 Comments (@(post.comments?.Count() ?? 0))
                 </button>
 
-                <!-- Comments -->
                 <div class="collapse mt-3" id="comments-@post.postsId">
 
                     @if (post.comments != null && post.comments.Any())
                     {
                         foreach (var comment in post.comments)
                         {
-                            <div class="border rounded p-2 mb-2 bg-light">
+                            <div class="comment-box">
 
                                 <p class="mb-1">
                                     @comment.commentContent
@@ -216,7 +219,7 @@
                                class="form-control"
                                placeholder="Write a comment..." />
 
-                        <button class="btn btn-success rounded-pill">
+                        <button class="btn btn-success">
                             Add
                         </button>
 
@@ -239,15 +242,36 @@
 
 </div>
 
-<!-- JS Read More -->
+<!-- JS -->
 <script>
-    function toggleContent(id) {
-        var el = document.getElementById("content-" + id);
 
-        if (el.style.maxHeight === "80px") {
-            el.style.maxHeight = "none";
+    document.addEventListener("DOMContentLoaded", function () {
+
+        document.querySelectorAll(".post-content").forEach(function (el) {
+
+            let id = el.id.split("-")[1];
+            let btn = document.getElementById("btn-" + id);
+
+            if (el.scrollHeight <= 90) {
+                btn.style.display = "none";
+            }
+
+        });
+
+    });
+
+    function toggleContent(id) {
+
+        let content = document.getElementById("content-" + id);
+        let btn = document.getElementById("btn-" + id);
+
+        content.classList.toggle("expanded");
+
+        if (content.classList.contains("expanded")) {
+            btn.innerText = "Show less";
         } else {
-            el.style.maxHeight = "80px";
+            btn.innerText = "Read more";
         }
     }
+
 </script>

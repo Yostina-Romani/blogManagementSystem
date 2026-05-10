@@ -3,55 +3,114 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - BlogManagementSystem</title>
+    <title>@ViewData["Title"] - BlogSystem</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/BlogManagementSystem.styles.css" asp-append-version="true" />
+
+    <style>
+        body {
+            background: #f4f6fb;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            padding: 12px 20px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link {
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+            .nav-link:hover {
+                color: #0d6efd !important;
+            }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #fff;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+
+    </style>
 </head>
+
 <body>
-    <header>
-       
-    
-    <div class="container">
-        <main role="main" class="pb-3">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
 
-                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                        Blog Management System
-                    </a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
 
-                    <!-- زرار الموبايل -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+        <div class="container-fluid">
 
-                    <!-- اللينكات -->
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <div class="navbar-nav ms-auto">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
-                            <a class="nav-link" asp-controller="Account" asp-action="Register">Create Account</a>
-                            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
-                            <a class="nav-link" asp-controller="posts" asp-action="post">Posts</a>
-                                <a asp-action="Logout" asp-controller="Account" class="nav-link">logout</a>
-                        </div>
-                    </div>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                📘 Blog System
+            </a>
 
-                </div>
-            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Posts" asp-action="post">Create Post</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">
+                            Logout
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="container mt-4">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
-    </header>
 
-    <footer class="border-top footer text-muted">
+    <!-- FOOTER -->
+    <footer>
         <div class="container">
-            &copy; 2026 - BlogManagementSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2026 - Blog Management System
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

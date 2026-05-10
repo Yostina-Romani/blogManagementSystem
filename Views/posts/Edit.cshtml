@@ -1,11 +1,115 @@
 ﻿@model Posts
-<h2>Edit Post</h2>
-<form method="post">
-    <input type="hidden" asp-for="postsId" />
-    <input  asp-for="Title" />
-    <br /><br />
-    <textarea asp-for="postContent"></textarea>
-    <br /><br />
-    <button type="submit">Save</button>
-</form>
 
+<style>
+    body {
+        background: #f4f6fb;
+    }
+
+    .edit-box {
+        max-width: 600px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .edit-title {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .preview-img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    textarea {
+        resize: none;
+        height: 150px;
+    }
+
+    .btn-save {
+        width: 100%;
+        border-radius: 25px;
+        padding: 10px;
+        font-weight: bold;
+        background: #0d6efd;
+        color: white;
+        border: none;
+        transition: 0.3s;
+    }
+
+        .btn-save:hover {
+            background: #0b5ed7;
+        }
+
+    .btn-delete-img {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
+
+        .btn-delete-img:hover {
+            background: #bb2d3b;
+        }
+
+    .file-input {
+        margin-bottom: 15px;
+    }
+
+</style>
+
+<div class="edit-box">
+
+    <h3 class="edit-title">✏️ Edit Post</h3>
+
+    <form method="post" enctype="multipart/form-data">
+
+        @if (!string.IsNullOrEmpty(Model.imageUrl))
+        {
+            <img src="@Model.imageUrl" class="preview-img" />
+
+            <button type="submit"
+                    name="removeImage"
+                    value="true"
+                    class="btn-delete-img">
+                🗑️ Delete Image
+            </button>
+        }
+
+        <input type="hidden" asp-for="postsId" />
+
+        <input type="file"
+               name="imageFile"
+               class="form-control file-input" />
+
+        <input asp-for="Title"
+               class="form-control mb-3"
+               placeholder="Post title" />
+
+        <textarea asp-for="postContent"
+                  class="form-control mb-3"
+                  placeholder="Write your post..."></textarea>
+
+        <button type="submit" class="btn-save">
+            Save Changes
+        </button>
+
+    </form>
+
+</div>
