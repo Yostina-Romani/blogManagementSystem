@@ -172,6 +172,12 @@ namespace BlogManagementSystem.Controllers
 
         public IActionResult ExportAllToPdf()
         {
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (currentUserId == null)
+            {
+                TempData["ErrorRegister"] = "must be have an account";
+                return RedirectToAction("Register", "Account");
+            }
             var posts = _context.posts.Include(p=>p.User).ToList();
             MemoryStream memory = new MemoryStream();
             Document pdf = new Document(PageSize.A4);
@@ -213,6 +219,12 @@ namespace BlogManagementSystem.Controllers
 
         public IActionResult ExportOnePost(int postId)
         {
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (currentUserId == null)
+            {
+                TempData["ErrorRegister"] = "must be have an account";
+                return RedirectToAction("Register", "Account");
+            }
             var post = _context.posts.Include(p => p.User).FirstOrDefault(p=>p.postsId==postId);
 
             MemoryStream memory = new MemoryStream();

@@ -1,0 +1,162 @@
+﻿@model BlogManagementSystem.ViewModels.HomeVM
+
+<style>
+    body {
+        background: #f4f6f9;
+        font-family: Arial;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 25px 0;
+        color: #333;
+    }
+
+    .container {
+        width: 85%;
+        margin: auto;
+    }
+
+    .post-card {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .post-title {
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .post-content {
+        color: #555;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+
+    .post-img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .comments {
+        background: #f8f9fa;
+        padding: 12px;
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .comment {
+        border-bottom: 1px solid #ddd;
+        padding: 8px 0;
+    }
+
+        .comment:last-child {
+            border-bottom: none;
+        }
+
+    .comment-user {
+        font-weight: bold;
+        color: #0d6efd;
+    }
+
+    .comment-text {
+        color: #444;
+        margin: 5px 0;
+    }
+
+    .comment-time {
+        font-size: 12px;
+        color: gray;
+    }
+
+    .actions {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+    }
+
+    .edit {
+        background: #0d6efd;
+    }
+
+    .delete {
+        background: #dc3545;
+    }
+</style>
+
+<h2>My Posts</h2>
+
+<div class="container">
+
+    @foreach (var post in Model.posts)
+    {
+        <div class="post-card">
+
+            <h3 class="post-title">@post.Title</h3>
+
+            <p class="post-content">@post.postContent</p>
+
+            @if (post.imageUrl != null)
+            {
+                <img src="@post.imageUrl" class="post-img" />
+            }
+
+            @if (post.comments != null)
+            {
+                <div class="comments">
+
+                    <h4>Comments</h4>
+
+                    @foreach (var comment in post.comments)
+                    {
+                        <div class="comment">
+                            <div class="comment-user">
+                                User: @comment.user.UserName
+                            </div>
+
+                            <div class="comment-text">
+                                @comment.commentContent
+                            </div>
+
+                            <div class="comment-time">
+                                @comment.commentTime
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            }
+
+            <div class="actions">
+                <a class="btn edit"
+                   asp-action="Edit"
+                   asp-controller="Posts"
+                   asp-route-postsId="@post.postsId">
+                    Edit
+                </a>
+
+                <a class="btn delete"
+                   asp-action="DeletePost"
+                   asp-controller="Posts"
+                   asp-route-postsId="@post.postsId">
+                    Delete
+                </a>
+            </div>
+
+        </div>
+    }
+
+</div>

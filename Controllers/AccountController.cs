@@ -1,5 +1,6 @@
 ﻿using BlogManagementSystem.Data;
 using BlogManagementSystem.Models;
+using BlogManagementSystem.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
@@ -139,8 +140,24 @@ namespace BlogManagementSystem.Controllers
            return RedirectToAction("Index", "Home");
         }
 
+        [HttpGet]
+        public IActionResult MyPosts()
+        {
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (currentUserId == null)
+            {
+                TempData["ErrorRegister"] = "You donot have account";
+                return RedirectToAction("Register", "Account");
+            }
+                var posts = _context.posts.Include(p=>p.comments).ThenInclude(p=>p.user).Where(p => p.userId == int.Parse(currentUserId)).ToList();
 
-
+            HomeVM vm = new HomeVM()
+            {
+                posts = posts
+            };
+            return View(vm);
+            
+        }
 
     }
 }

@@ -66,24 +66,33 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Posts" asp-action="post">Create Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="MyPosts">My Posts</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">
+                                Logout
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Posts" asp-action="post">Create Post</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-danger" asp-controller="Account" asp-action="Logout">
-                            Logout
-                        </a>
-                    </li>
+                        
+                    }
 
                 </ul>
 
