@@ -5,5 +5,6 @@ namespace BlogManagementSystem.ViewModels
     {
         public List<Posts> ?posts { get; set; }
         public Comments ?commentS { get; set; }
+       // public Users? Users { get; set; }
     }
 }

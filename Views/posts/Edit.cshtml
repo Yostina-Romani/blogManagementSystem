@@ -1,4 +1,12 @@
 ﻿@model Posts
+@if (TempData["Error_edit"] != null)
+{
+    <div class="container mt-4">
+        <div class="alert alert-success text-center shadow-sm rounded-3">
+            @TempData["Error_edit"]
+        </div>
+    </div>
+}
 
 <style>
     body {

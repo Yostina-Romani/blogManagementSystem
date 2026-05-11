@@ -8,7 +8,8 @@ namespace BlogManagementSystem.Models
         public  int userId { get; set; }
         [Required(ErrorMessage ="must enter your name")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "must enter your email")]
+        [Required]
+        [EmailAddress(ErrorMessage = "invalid email format")]
 
         public string UserEmail { get; set; }
         [Required][RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{7,}$", ErrorMessage = "password must be at least 7 chracters and contain uppercas,lowercase,number and special character")]

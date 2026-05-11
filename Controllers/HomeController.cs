@@ -40,7 +40,7 @@ namespace BlogManagementSystem.Controllers
             }
             var model = new HomeVM
             {
-                posts = posts.Include(p => p.comments).ToList()
+                posts = posts.Include(p => p.comments).ThenInclude(p=>p.user).ToList()
             };
             
             return View(model);

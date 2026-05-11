@@ -1,4 +1,5 @@
-﻿using BlogManagementSystem.Data;
+﻿using Azure.Identity;
+using BlogManagementSystem.Data;
 using BlogManagementSystem.Models;
 using BlogManagementSystem.ViewModels;
 using Microsoft.AspNetCore.Authentication;
@@ -69,7 +70,16 @@ namespace BlogManagementSystem.Controllers
                 ModelState.AddModelError("UserEmail", "email already exist");
                 return View(user);
             }
+          var  username = user.UserName;
+            if (username.Length<3)
+            {
+
+                TempData["ErrorRegister"] = "user name must be > 3";
+                return View(user);
+
+            }
             var nameExist = _context.users.FirstOrDefault(u => u.UserName == user.UserName);
+
             if (nameExist != null)
             {
                 ModelState.AddModelError("UserName", "name used");

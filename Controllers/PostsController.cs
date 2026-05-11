@@ -43,6 +43,16 @@ namespace BlogManagementSystem.Controllers
                 }
                 post.imageUrl = "/Images/" + filename;
             }
+            if (post.Title == null)
+            {
+                TempData["post_error"] = "title cannot be empty";
+                return View(post);
+            }
+            if (post.postContent == null)
+            {
+                TempData["post_error"] = "content cannot be empty";
+                return View(post);
+            }
             post.createAt = DateTime.Now;
 
             post.userId = int.Parse(userIdCurrent);
@@ -77,13 +87,13 @@ namespace BlogManagementSystem.Controllers
             var post = _context.posts.Find(updatePost.postsId);
             if (updatePost.Title == null)
             {
-                TempData["Error"] = "title cannot be empty";
+                TempData["Error_edit"] = "title cannot be empty";
                 return View(updatePost);
             }
             post.Title = updatePost.Title;
             if (updatePost.postContent == null)
             {
-                TempData["Error"] = "content cannot be empty";
+                TempData["Error_edit"] = "content cannot be empty";
                 return View(updatePost);
             }
             
