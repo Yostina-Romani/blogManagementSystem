@@ -71,10 +71,10 @@ namespace BlogManagementSystem.Controllers
                 TempData["Error"] = "must be register or login first";
                 return RedirectToAction("Index", "Home");
             }
-            
+            bool isAdmin = User.IsInRole("Admin");
             var post = _context.posts.Find(postsId);
             var ownerId = post.userId;
-            if (ownerId.ToString() != currentUserId.ToString())
+            if (ownerId.ToString() != currentUserId.ToString()&& !isAdmin)
             {
                 TempData["Error"] = "you cannot edit this post";
                 return RedirectToAction("Index", "Home");
@@ -151,15 +151,16 @@ namespace BlogManagementSystem.Controllers
                 TempData["ErrorRegister"] = "must be register first";
                 return RedirectToAction("Register", "Account");
             }
-            
+            bool isAdmin = User.IsInRole("Admin");
             var post = _context.posts.Find(postsId);
             var ownerId = post.userId;
-            if (ownerId.ToString() != currentUserId.ToString())
+            if (ownerId.ToString() != currentUserId.ToString()&& !isAdmin)
             {
                 TempData["Error"] = "you cannot delete this post";
                 return RedirectToAction("Index", "Home");
 
             }
+
             return View(post);
         }
 

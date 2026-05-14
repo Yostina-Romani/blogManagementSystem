@@ -7,6 +7,8 @@ namespace BlogManagementSystem.Models
         [Key]
         public  int userId { get; set; }
         [Required(ErrorMessage ="must enter your name")]
+        [MinLength(3)]
+        [DataType(DataType.Text)]
         public string UserName { get; set; }
         [Required]
         [EmailAddress(ErrorMessage = "invalid email format")]
@@ -19,6 +21,8 @@ namespace BlogManagementSystem.Models
         public string UserPassword_confirm { get; set; }
 
         public DateTime registerTime { get; set; }
+
+        public string Role { get; set; } = "User";
         public string ?salt { get; set; }
         public virtual List<Posts> ?posts { get; set; } = new();
         public virtual List<Comments>? comments { get; set; } = new();

@@ -70,14 +70,14 @@ namespace BlogManagementSystem.Controllers
                 ModelState.AddModelError("UserEmail", "email already exist");
                 return View(user);
             }
-          var  username = user.UserName;
+       /*   var  username = user.UserName;
             if (username.Length<3)
             {
 
                 TempData["ErrorRegister"] = "user name must be > 3";
                 return View(user);
 
-            }
+            }*/
             var nameExist = _context.users.FirstOrDefault(u => u.UserName == user.UserName);
 
             if (nameExist != null)
@@ -131,7 +131,8 @@ namespace BlogManagementSystem.Controllers
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier,dbuser.userId.ToString()),
-                new Claim(ClaimTypes.Name,dbuser.UserName)
+                new Claim(ClaimTypes.Name,dbuser.UserName),
+                new Claim(ClaimTypes.Role,dbuser.Role),
 
 
             };

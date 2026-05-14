@@ -27,21 +27,35 @@ namespace BlogManagementSystem.Controllers
             var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
            
             var posts = _context.posts.AsQueryable();
-            if (!string.IsNullOrWhiteSpace(search))
-                {
-                if (currentUserId == null)
+            
+
+            if ( currentUserId==null)
+            {
+                if (!string.IsNullOrWhiteSpace(search))
                 {
                     TempData["ErrorRegister"] = "must be register or login first";
                     return RedirectToAction("Register", "Account");
+
+                }
+                search = null;
+            }
+            else
+            {
+                if (!string.IsNullOrWhiteSpace(search))
+                {
+                    posts = posts.Where(p =>
+                        p.Title.Contains(search) ||
+                        p.postContent.Contains(search));
                 }
 
-                posts = posts.Where(p => p.Title.Contains(search) || p.postContent.Contains(search));
-                
             }
+
+            
+
             var model = new HomeVM
-            {
-                posts = posts.Include(p => p.comments).ThenInclude(p=>p.user).ToList()
-            };
+                {
+                    posts = posts.Include(p => p.comments).ThenInclude(p => p.user).ToList()
+                };
             
             return View(model);
         }
