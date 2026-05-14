@@ -28,7 +28,11 @@
                                    placeholder="enter your password" />
                             <span asp-validation-for="UserPassword" class="text-danger"></span>
                         </div>
-
+                        <div class="register-link">
+                            <a asp-controller="Account" asp-action="Register">
+                                Create a new account
+                            </a>
+                        </div>
                         <!-- Button -->
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary rounded-3">

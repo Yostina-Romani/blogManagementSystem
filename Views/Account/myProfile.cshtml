@@ -1,0 +1,132 @@
+﻿@model Users
+
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<style>
+    body {
+        background: linear-gradient(to right, #f5f7fa, #e4ecfb);
+        min-height: 100vh;
+    }
+
+    .profile-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 500px;
+        background: white;
+        border-radius: 22px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: 0.3s ease;
+    }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .profile-header {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .profile-avatar {
+        width: 95px;
+        height: 95px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 15px;
+        box-shadow: 0 5px 15px rgba(79,70,229,0.3);
+    }
+
+    .profile-header h2 {
+        font-weight: 700;
+        color: #222;
+    }
+
+    .info-box {
+        background: #f8f9fc;
+        border-radius: 14px;
+        padding: 16px 18px;
+        margin-bottom: 18px;
+        border: 1px solid #eef1f7;
+    }
+
+    .info-title {
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 5px;
+    }
+
+    .info-value {
+        font-size: 17px;
+        font-weight: 600;
+        color: #222;
+    }
+
+    .posts-btn {
+        width: 100%;
+        border: none;
+        padding: 14px;
+        border-radius: 14px;
+        background: linear-gradient(to right, #4f46e5, #7c3aed);
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+        .posts-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.01);
+            color: white;
+        }
+</style>
+
+<div class="profile-container">
+    <div class="profile-card">
+
+        <div class="profile-header">
+
+            <div class="profile-avatar">
+                @Model.UserName.Substring(0, 1).ToUpper()
+            </div>
+
+            <h2>My Profile</h2>
+
+        </div>
+
+        <div class="info-box">
+            <div class="info-title">User Name</div>
+            <div class="info-value">@Model.UserName</div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title">Email Address</div>
+            <div class="info-value">@Model.UserEmail</div>
+        </div>
+
+        <a asp-action="MyPosts"
+           asp-controller="Account"
+           class="posts-btn">
+            View My Posts
+        </a>
+
+    </div>
+</div>

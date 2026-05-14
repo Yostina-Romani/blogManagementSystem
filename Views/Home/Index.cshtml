@@ -1,4 +1,5 @@
-﻿@model BlogManagementSystem.ViewModels.HomeVM
+﻿@using System.Security.Claims;
+@model BlogManagementSystem.ViewModels.HomeVM
 
 @{
     ViewData["Title"] = "Home Page";
@@ -143,21 +144,30 @@
                        class="btn btn-danger btn-sm">
                         Download
                     </a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        var claim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                        bool isAdmin = User.IsInRole("Admin");
+                        int.TryParse(claim, out int userId);
+                        
+                            if (post.userId == userId||isAdmin)
+                            {
+                                <a asp-action="Edit"
+                                   asp-controller="Posts"
+                                   asp-route-postsId="@post.postsId"
+                                   class="btn btn-warning btn-sm">
+                                    Edit
+                                </a>
 
-                    <a asp-action="Edit"
-                       asp-controller="Posts"
-                       asp-route-postsId="@post.postsId"
-                       class="btn btn-warning btn-sm">
-                        Edit
-                    </a>
-
-                    <a asp-action="DeletePost"
-                       asp-controller="Posts"
-                       asp-route-postsId="@post.postsId"
-                       class="btn btn-dark btn-sm">
-                        Delete
-                    </a>
-
+                                <a asp-action="DeletePost"
+                                   asp-controller="Posts"
+                                   asp-route-postsId="@post.postsId"
+                                   class="btn btn-dark btn-sm">
+                                    Delete
+                                </a>
+                            }
+                        
+                    }
                 </div>
 
                 <!-- COMMENTS -->
@@ -189,21 +199,31 @@
                                 </p>
 
                                 <div class="d-flex gap-2">
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        bool isAdmin = User.IsInRole("Admin");
+                                        var user_id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                                         int.TryParse(user_id, out int UserId1);
+                                        
+                                            if (UserId1 == comment.usersId||isAdmin)
+                                            {
 
-                                    <a asp-controller="Comments"
-                                       asp-action="EditComment"
-                                       asp-route-commentId="@comment.commentId"
-                                       class="btn btn-sm btn-outline-primary">
-                                        Edit
-                                    </a>
+                                                <a asp-controller="Comments"
+                                                asp-action="EditComment"
+                                                asp-route-commentId="@comment.commentId"
+                                                class="btn btn-sm btn-outline-primary">
+                                                    Edit
+                                                </a>
 
-                                    <a asp-controller="Comments"
-                                       asp-action="Delete_comment"
-                                       asp-route-commentId="@comment.commentId"
-                                       class="btn btn-sm btn-outline-danger">
-                                        Delete
-                                    </a>
-
+                                                <a asp-controller="Comments"
+                                                asp-action="Delete_comment"
+                                                asp-route-commentId="@comment.commentId"
+                                                class="btn btn-sm btn-outline-danger">
+                                                    Delete
+                                                </a>
+                                            }
+                                        
+                                    }
                                 </div>
 
                             </div>

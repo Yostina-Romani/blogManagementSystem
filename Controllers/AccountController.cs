@@ -170,5 +170,16 @@ namespace BlogManagementSystem.Controllers
             
         }
 
+        public IActionResult myProfile()
+        {
+            var userid = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+           
+            var  userid1 = int.Parse(userid);
+
+            var user = _context.users.Find(userid1);
+
+            return View(user);
+        }
+
     }
 }
